@@ -1,0 +1,1096 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+    outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+input[type=search] {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    display: inline;
+    zoom: 1;
+    max-width: 100%;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-size: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+
+img {
+    border: 0; /* 1 */
+    -ms-Latopolation-mode: bicubic; /* 2 */
+}
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+
+figure {
+    margin: 0;
+}
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+
+form {
+    margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0;
+    white-space: normal; /* 2 */
+    margin-left: -7px; /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* 1 */
+    margin: 0; /* 2 */
+    vertical-align: baseline; /* 3 */
+    vertical-align: middle; /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+     /* 3 */
+    overflow: visible;  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+    height: 13px; /* 3 */
+    width: 13px; /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #00CCCC 0.2%,   white 20%, white 80%, #00CCCC 100%  );
+
+
+}
+
+
+.header_logo-pic {
+
+    background-image: url("icons/girl.jpg");
+    background-position: 245px 900px;
+    background-size: 150%;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    border: 3px solid #00CCCC;
+
+}
+
+
+
+a {
+    font-family: "Exo 2 SemiBold";
+    font-size: 200%;
+}
+
+h6 {
+    font-family: "Exo 2 SemiBold";
+}
+
+.contact_logo-pic {
+
+    width: 30px;
+
+}
+
+.contacts:hover .text1 {
+     visibility: visible;
+
+}
+
+.contacts:hover .text2 {
+    visibility: visible;
+
+}
+
+.contacts:hover .text3 {
+    visibility: visible;
+
+}
+
+.text1 {
+    height: 20px;
+    font-size: 20px;
+   vertical-align: center;
+    visibility: hidden;
+    transition:  2s ease;
+    animation: 2s show ease;
+
+
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.text2 {
+    height: 20px;
+    font-size: 20px;
+    vertical-align: center;
+    visibility: hidden;
+    transition:  5s ease;
+    animation: 5s show ease;
+
+
+}
+
+
+
+.text3 {
+    height: 20px;
+    font-size: 20px;
+    vertical-align: center;
+    visibility: hidden;
+    transition:  5s ease;
+    animation: 5s show ease;
+
+
+}
+
+
+
+p {
+    font-size: 15px;
+    font-family: "Exo 2 SemiBold";
+
+}
+
+.container {
+    background-color: rgb(192, 192, 192);
+    width: 30%;
+
+    border-radius: 15px;
+}
+
+.skill {
+    background-color: #00CCCC;
+    color: white;
+    padding: 1%;
+    text-align: right;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.html {
+    width: 80%;
+}
+
+.php {
+    width: 45%;
+}
+
+.css {
+    width: 75%;
+}
+
+.js {
+   width: 40%;
+}
+
+.C\# {
+    width: 60%
+}
+.db {
+    width: 80%;
+}
+
+.jira {
+    width: 70%;
+}
+
+.confluence {
+    width: 70%;
+}
+
+.word {
+    width: 90%;
+}
+
+.excel {
+    width: 50%;
+}
+
+.interests_logo-pic {
+    width: 60px;
+}
+
+body {
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+
+.MemoryGameLink {
+
+    text-decoration: none;
+    font-size: 18px;
+    background: linear-gradient(-45deg, #6355a4, #6355a4, #e89a3e, #e89a3e);
+    background-size: 300%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animated_text 10s ease-in-out infinite;
+    -moz-animation: animated_text 10s ease-in-out infinite;
+    -webkit-animation: animated_text 10s ease-in-out infinite;
+    
+}
+
+.Occupation_MemoryGame {
+    display: grid;
+    gap: 5px;
+}
+
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+.Links {
+    text-decoration: none;
+
+}
+
+.First_block {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.Second_block {
+    display: flex;
+    gap: 5px;
+    justify-content: right;
+}
+
+a {
+
+}
+
+header {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+
+}
+
+.container {
+    width: 300px;
+
+}
+
+
+
+
+.box-1 {
+
+}
+.box-2 {
+
+}
+
+.wrapper {
+    gap: 40px;
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 850px ;
+    display: flex;
+    height: 200px;
+
+}
+
+
+.header_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    font-family: "Exo 2 SemiBold";
+}
+
+.info-wrapper {
+width: 800px;
+display: flex;
+padding-left: 60px;
+
+
+
+}
+
+.header_logo {
+   width: 300px;
+    display: flex;
+    padding-left: 40px;
+
+
+}
+
+.FIO {
+    font-size: 50px;
+}
+
+.Occupation {
+    font-size: 20px;
+    color: grey;
+    background: linear-gradient(-45deg, #6355a4, #6355a4, #e89a3e, #e89a3e);
+    background-size: 300%;
+    font-family: Arial, Helvetica, sans-serif;
+
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animated_text 10s ease-in-out infinite;
+    -moz-animation: animated_text 10s ease-in-out infinite;
+    -webkit-animation: animated_text 10s ease-in-out infinite;
+}
+
+@keyframes animated_text {
+    0% { background-position: 0px 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0px 50%; }
+}
+
+
+.FIO-OCCUPATION {
+    display: grid;
+    gap: 15px;
+}
+
+.link-wrapper {
+    display: grid;
+    gap: 5px;
+    height: 90px;
+
+}
+
+.contacts {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.link-font {
+    font-size: 15px;
+}
+
+.container-info {
+
+    display: grid;
+    align-content: space-between ;
+}
+
+.main {
+    padding-top: 30px;
+    width: 850px;
+    margin: 0 auto;
+    display: flex;
+    height: 500px;
+}
+
+
+.left-info {
+
+    width: 300px;
+}
+
+.right-info {
+width: 472.5px;
+    padding-left: 50px;
+
+}
+
+.straight_line {
+
+    border-radius: 30px;
+    width: 300px;
+    height: 0px;
+    border: 0.4mm solid black;
+    border-image: linear-gradient(45deg,red, #00CCCC, darkgrey ) 1;
+
+}
+
+.straight_line2 {
+
+    border-radius: 30px;
+    width: 472.5px;
+    height: 0px;
+    border: 0.4mm solid black;
+    border-image: linear-gradient(45deg,red, #00CCCC, darkgrey ) 1;
+
+}
+
+.container_links {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+
+.first_block_pictures {
+    display: flex;
+    justify-content: space-around;
+
+
+  }
+
+  .second_block_pictures {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 20px;
+
+    }
+
+  .INTERESTS {
+padding-top: 7.5px;
+  }
+
+  .right-corner-info {
+
+      display: grid;
+      justify-content: start;
+      padding-left: 30px;
+
+
+
+  }
+
+  .straight_line3 {
+      border-radius: 30px;
+      width: 472.5px;
+      height: 0px;
+      border: 0.4mm solid black;
+      border-image: linear-gradient(45deg,red, #00CCCC, darkgrey ) 1;
+  }
+
+  .skills_h1 {
+height: 28px;
+      vertical-align: center;
+  }
+
+  .about_me_paragraph {
+
+      padding-top: 10px;
+
+
+  }
+
+
+.h3_font_size {
+    font-size: 18px;
+    line-height: 24.5px;
+    font-style: italic;
+}
+
+.skills_h1 {
+    padding-top: 20px;
+}
+
+.containers_skills {
+    gap: 3px;
+    display: grid;
+}
+
+.img_height_width {
+
+    height: 60px;
+    width: 60px;
+}
+
+.img_height_width:hover {
+
+    height: 65px;
+    width: 65px;
+
+}
+
+
+.info_link1 {
+    background: url("icons/whatsapp.png");
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.info_link2 {
+
+
+    background: url("icons/telegram_static.png");
+    filter: grayscale(100%);
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.info_link3 {
+
+
+    background: url("icons/github.png");
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.info_link4 {
+
+
+    background: url("icons/vk.png");
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.info_link5 {
+
+
+    background: url("icons/instagram.png");
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+.info_link6 {
+
+
+    background: url("icons/twitter.png");
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+.info_link1:hover {
+    background: url("icons/whatsapp_animated .gif");
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.info_link2:hover {
+    background: url("icons/telegram_static.png");
+    filter: grayscale(100%);
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.info_link3:hover {
+    background: url("icons/github_animated.gif");
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.info_link4:hover {
+    background: url("icons/vk_animated.gif");
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.info_link5:hover {
+    background: url("icons/instagram_animated.gif");
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.info_link6:hover {
+    background: url("icons/twitter_animated.gif");
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.links-padding {
+    padding-top: 20px;
+}
+
+.skills_links_padding {
+padding-top: 30px;
+}
+
+
+
+
+@media (max-width: 700px) {
+
+    .wrapper {
+        padding-right: 50px;
+        margin: 0 auto;
+        display: grid;
+        justify-content: start;
+        height: 400px;
+        width: 350px;
+        gap: 0px;
+
+    }
+
+    .main {
+        padding-top: 60px;
+        margin: 0 auto;
+        display: grid;
+        width: 350px;
+
+    }
+
+    .FIO {
+        margin: 0 auto;
+        width: 390px;
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .Occupation {
+        margin: 0 auto;
+        width: 390px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .MemoryGameLink {
+        margin: 0 auto;
+        width: 390px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+
+
+.contacts {
+    display: flex;
+    justify-content: center;
+    width: 390px;
+    text-align: center;
+}
+
+
+   .header_logo {
+       padding-left: 0px;
+       display: flex;
+       justify-content: center;
+       width: 390px;
+   }
+
+   .info-wrapper {
+       width: 350px;
+       padding-left: 0px;
+       padding-top: 20px;
+   }
+
+   .left-info {
+       width: 350px;
+   }
+
+   .right-info {
+       width: 350px;
+       padding: 0 0 0 0;
+   }
+
+   .about_me_paragraph > p {
+ font-size: 18px;
+   }
+
+    .about_me_paragraph {
+        width: 350px;
+    }
+
+
+   .skills_h1 {
+       font-size: 22px ;
+   }
+
+   .straight_line {
+       width: 350px;
+   }
+
+   .straight_line2 {
+       width: 350px;
+   }
+
+   .straight_line3 {
+       width: 350px;
+   }
+
+   .container {
+       width: 350px;
+       gap: 5px;
+   }
+
+    .containers_skills > p {
+        font-size: 18px;
+    }
+
+    .container_links {
+        width: 350px;
+        height: 70px;
+    }
+
+    .skills_links_padding  {
+        font-size: 22px;
+    }
+
+    .header_logo-pic {
+        background-position: 300px 750px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .link-wrapper {
+        padding-top: 20px;
+
+    }
+
+html {
+    background: none;
+}
+    .text1 {
+        visibility: visible;
+        animation: none;
+        transition: none;
+        height: auto;
+        width: auto;
+    }
+
+    .text2 {
+        visibility: visible;
+        animation: none;
+        transition: none;
+        height: auto;
+        width: auto;
+    }
+
+    .text3 {
+        visibility: visible;
+        animation: none;
+        transition: none;
+        height: auto;
+        width: auto;
+    }
+
+
+
+
+}
+
+
+
+
